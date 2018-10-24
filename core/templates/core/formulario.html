@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../css/formulario.css">
+       <link rel="stylesheet" href="../css/fontello.css">
+       <link rel="stylesheet" href="../css/boton.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Formulario</title>
+
+
+
+    </head>
+    <body class="bo" >
+<!--        <script src="../js/jquery.js"></script>-->
+<!--        <script src="../js/jquery.validate.js"></script> -->
+
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function (event) {
+                
+                
+                $("#formulario").validate({
+                    rules: {
+                        txtRut: "required",
+                        txtNombres: "required",
+                        txtApellidos: "required",
+                        txtTelefono: "required",
+                        txtCorreo: {requiered:true},
+                        dtpFecha: "required",
+                        cboRegion: "required",
+                        cboCiudad: "required",
+                        cboVivienda: "requiered"
+
+                    },
+                    messages: {
+                        txtRut: {
+                            required: "Ingrese su rut"
+                        },
+                        txtNombres: {
+                            required: "Ingrese sus Nombres"
+                        },
+                        txtApellidos: {
+                            required: "Ingrese sus apellidos"
+                        },
+                        txtTelefono: {
+                            required: "Ingrese su telefono"
+                        },
+                        txtCorreo: {
+                            required: "Ingrese Correo Electronico"
+                        },
+                        cboRegion: {
+                            required: "Seleccione una región"
+                        },
+                     cboCiudad: {
+                           required: "Seleccione una ciudad"
+                       },
+                        cboVivienda: {
+                            required: "Seleccione una ciudad"
+                        },
+                        dtpFecha: {
+                            required: "Indique su fecha de nacimiento"
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $.ajax({
+
+                            url: 'procesoIngresar.php',
+                            type: 'post',
+                            data: $("#formulario").serialize(),
+                            success: function (data) {
+                                
+                            }
+                        });
+                    }
+                });
+                
+            });
+
+        </script>        
+        <?php
+        $cone = mysqli_connect("localhost", "root", "", "misperris");
+        $reg = mysqli_query($cone, "select * from region");
+        $viv = mysqli_query($cone, "select * from tipovivienda");
+        $cid = mysqli_query($cone, "select * from ciudad");
+        ?>
+        
+<header>
+<div class="contenedor">
+          <img class="logo" src="../img/logo.png" alt="">
+          <input type="checkbox" id="menu-bar">
+          <label class="icon-menu" for="menu-bar"></label>
+               <nav class="menu">
+               
+              
+                 <a href="Salir.php">Salir</a>
+               </nav>
+
+     
+ </div>
+</header>
+
+        <form action="procesoIngresar.php" method="post" id="formulario" class="formu">
+
+
+
+            <!-- Contact Section -->
+            <div id="contact" class="text-center">
+                <div class="container">
+                    <div class="section-title center">
+                        <h2>Registro de Usuarios</h2>
+                        <hr>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <form name="sentMessage" id="contactForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" id="txtNombres" name="txtNombres" class="form-control" placeholder="Nombres" required="required" minlength="3" maxlength="50">
+                                        <p class="help-block text-danger"></p>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="txtApellidos" id="txtApellidos" class="form-control" placeholder="Apellidos" required="required" minlength="3" maxlength="50">
+
+
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" id="txtRut" name="txtRut" class="form-control" placeholder="Rut" required="required" minlength="10" maxlength="10">
+
+
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" id="txtTelefono" name="txtTelefono" class="form-control" placeholder="Teléfono" required="required" minlength="8" maxlength="8">
+                                        <p class="help-block text-danger"></p>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+
+                                    <input class="form-control" type="date" id="dtpFecha" name="dtpFecha" min="1918-01-01" max="2000-12-31" required="required">
+                                    <span class="validity"></span>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <select class="form-control" id="cboRegion" name="cboRegion">
+                                            <option>Seleccione Region</option>
+                                            <?php
+                                            while ($row = mysqli_fetch_array($reg)) {
+                                                echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+                                            }
+                                            ?>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <select class="form-control"  id="cboCiudad" name="cboCiudad" >
+                            
+                                            <option>seleccione</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <select class="form-control"  required="required" id="cboVivienda" name="cboVivienda" >
+                                            <option>Seleccione Tipo Vivienda</option>
+                                            <?php
+                                            while ($row1 = mysqli_fetch_array($viv)) {?>
+                                            <option  value="<?php echo $row1[0];?>" ><?php echo $row1[1]; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" id="txtCorreo" name="txtCorreo"class="form-control" placeholder="Correo Electronico" required="required">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="success"></div>
+
+                            <button type="submit"  id="btnGrabar"   class="form-group">Registrarse</button>
+
+
+
+                            <div class="social">
+                                <ul>
+
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+
+        <div class="divdiv">
+
+
+        </div>
+        <footer>
+            <div class="redessociales">
+
+                <img src="../img/Facebook.png">
+                <img src="../img/Instagram.png">
+                <img src="../img/Twitter.png">
+                <img src="../img/Google+.png">
+
+
+            </div>
+
+
+        </footer>
+
+    </body>
+
+
+
+</html>

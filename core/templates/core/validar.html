@@ -1,0 +1,17 @@
+<?php
+session_start();
+$user=$_POST["txtUser"];
+$pass=$_POST["txtPass"];
+
+$cone= mysqli_connect("localhost", "root", "", "misperris");
+$sql="select * from login where UserName='$user' and pass='$pass'";
+$reg= mysqli_query($cone, $sql);
+while ($row = mysqli_fetch_array($reg)) {
+    $_SESSION["UserName"]=$row[0];
+    //echo '<script>alert("no existe'.$sql.'")</script>';    
+    header("location:index.php"); 
+    return;
+}
+echo '<script>alert("usuario o clave no existen");'
+. 'document.location.href="login.php"</script>';
+

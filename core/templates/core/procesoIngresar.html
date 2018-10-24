@@ -1,0 +1,41 @@
+<?php
+include_once '../controlador/conexion.php';
+include_once '../controlador/DaoCliente.php';
+include_once '../modelos/Cliente.php';
+
+
+$Nombres=$_POST["txtNombres"];
+$Apellidos=$_POST["txtApellidos"];
+$Rut=$_POST["txtRut"];
+$Telefono=$_POST["txtTelefono"];
+$FechaNaci=$_POST["dtpFecha"];
+$Ciudad_idCiudad=$_POST["cboCiudad"];
+$Ciudad_Region_idRegion=$_POST["cboRegion"];
+$TipoVivienda_idTipoVivienda=$_POST["cboVivienda"];        
+$Correo=$_POST["txtCorreo"];
+$cli=new Cliente();
+$cli->setNombres($Nombres);
+$cli->setApellidos($Apellidos);
+$cli->setRut($Rut);
+$cli->setTelefono($Telefono);
+$cli->setFechaNaci($FechaNaci);
+$cli->setCiudad_idCiudad($Ciudad_idCiudad);
+$cli->setCiudad_Region_idRegion($Ciudad_Region_idRegion);
+$cli->setTipoVivienda_idTipoVivienda($TipoVivienda_idTipoVivienda);
+$cli->setCorreo($Correo);
+
+$dao=new DaoCliente();
+$resp=$dao->Crear($cli);
+
+if ($resp>0) {
+      echo '<script>alert("Usuario registrado");'
+    . 'document.location.href="login.php"</script>';
+  
+    
+}else{
+    echo '<script>alert("ERROR AL REGISTRAR , PORFAVOR INTENTE NUEVAMENTE");'
+    . 'document.location.href="formulario.php"</script>';
+}
+ 
+    
+?>
