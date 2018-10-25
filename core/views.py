@@ -6,7 +6,7 @@ def index(request):
 
 
 def registro(request):
-  cliente = Cliente.objects.all()
+  cliente = Cliente.objects.all()   ·
   if request.POST:
     rut=request.POST.get("txt_rut","")
     nombres=request.POST.get("txt_nombres","")
