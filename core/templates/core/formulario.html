@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="../css/estilos.css">
-        <link rel="stylesheet" href="../css/formulario.css">
-       <link rel="stylesheet" href="../css/fontello.css">
-       <link rel="stylesheet" href="../css/boton.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Formulario</title>
-
-
+{% extends "core/base.html" %}
+{% load static %}
+     
+    
 
     </head>
     <body class="bo" >
-<!--        <script src="../js/jquery.js"></script>-->
-<!--        <script src="../js/jquery.validate.js"></script> -->
+    
+    {% block css %} 
+        <link rel="stylesheet" href="{% static '/css/estilos.css' %}">
+        <link rel="stylesheet" href="{% static '/css/formulario.css' %}">
+        <link rel="stylesheet" href="{% static '/css/fontello.css' %}">
+        <link rel="stylesheet" href="{% static '/css/boton.css' %}">
+    {% endblock css %}
 
-       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    {% block js %}
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    {% endblock js %}
+
+    {% block contenedor %}
+    
+
+      
         <script>
             $(document).ready(function (event) {
                 
@@ -89,20 +93,20 @@
         
 <header>
 <div class="contenedor">
-          <img class="logo" src="../img/logo.png" alt="">
+          <img class="logo" src="{% static '/img/logo.png' %}" alt="">
           <input type="checkbox" id="menu-bar">
           <label class="icon-menu" for="menu-bar"></label>
                <nav class="menu">
                
               
-                 <a href="Salir.php">Salir</a>
+                 <a href="Salir.html">Salir</a>
                </nav>
 
      
  </div>
 </header>
 
-        <form action="procesoIngresar.php" method="post" id="formulario" class="formu">
+        <form action="procesoIngresar.html" method="post" id="formulario" class="formu">
 
 
 
@@ -163,16 +167,12 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-
-                                        <select class="form-control" id="cboRegion" name="cboRegion">
-                                            <option>Seleccione Region</option>
-                                            <?php
-                                            while ($row = mysqli_fetch_array($reg)) {
-                                                echo '<option value="' . $row[0] . '">' . $row[1] . '</option>';
-                                            }
-                                            ?>
-
-                                        </select>
+                                    <select class="form-control" id="cboRegion" name="categoria">
+                                    <option value="">Seleccione</option>                                   
+                                    {% for item in regi %}
+                                    <option>{{item.name}}</option>
+                                    {% endfor %}
+                            
                                     </div>
                                 </div>
 
@@ -244,10 +244,10 @@
         <footer>
             <div class="redessociales">
 
-                <img src="../img/Facebook.png">
-                <img src="../img/Instagram.png">
-                <img src="../img/Twitter.png">
-                <img src="../img/Google+.png">
+                <img src="{% static '/img/Facebook.png' %}">
+                <img src="{% static '/img/Instagram.png' %}">
+                <img src="{% static '/img/Twitter.png' %}">
+                <img src="{% static '/img/Google+.png' %}">
 
 
             </div>
@@ -255,6 +255,7 @@
 
         </footer>
 
+{% endblock %}  
     </body>
 
 
