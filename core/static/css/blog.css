@@ -1,0 +1,335 @@
+
+#blog h4,h3{
+    text-align: center;
+    
+    }
+    #blog p{
+    
+    text-align: center;
+    
+    }
+    
+    
+    #blog .contenedor  {
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+    }
+    
+    #blog img{
+        width: 350px;;
+        height:  250px;
+        }
+
+
+
+                
+             
+        
+        
+        
+
+
+
+
+@media (min-width:720px){
+
+
+    #blog .contenedor  {
+        display: flex;
+        
+        flex-wrap: wrap;
+        margin-left: -10%;
+        }
+        
+
+
+    #blog img{
+        width: 350px;;
+        height:  250px;
+        
+        }
+
+    .img{
+        width: 350px;;
+        height:  250px;
+        
+        margin-left: 15%
+    }    
+        #blog .cont1  {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-left: 20%;
+            margin-top: 0%;
+            }
+        
+            #blog .cont1 p  {
+                margin-right:37%;
+                }
+                
+            #blog .cont1 h3  {
+                margin-right: -3%;
+                }
+        
+                #blog .cont1 h4  {
+                    margin-right: -3%;
+                    }
+            
+                    
+            
+        
+            #blog .cont2  {
+                display: flex;
+                justify-content: right;
+                flex-wrap: wrap;
+                margin-left: 61%;
+                margin-top: -18%;
+            
+                }
+                #blog .cont2 p  {
+                    margin-right: 35%;
+                    }
+                    
+                #blog .cont2 h3{
+                    margin-right: 79%;
+                    }
+        
+                    #blog .cont2 h4{
+                        margin-right: 79%;
+                        }    
+                    #blog .cont2 img  {
+                    margin-bottom: -14%;
+                        }
+
+}
+
+
+
+
+@media (min-width:768px){
+
+    #blog .contenedor  {
+        display: flex;
+        
+        flex-wrap: wrap;
+        margin-left: -10%;
+        }
+        
+
+
+    #blog img{
+        width: 350px;;
+        height:  250px;
+        
+        }
+
+    .img{
+        width: 350px;;
+        height:  250px;
+        
+        margin-left: 10%
+    }    
+        #blog .cont1  {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-left: 20%;
+            margin-top: 0%;
+            }
+        
+            #blog .cont1 p  {
+                margin-right: 45%;
+                }
+                
+            #blog .cont1 h3  {
+                margin-right: 7%;
+                }
+        
+                #blog .cont1 h4  {
+                    margin-right: 7%;
+                    }
+            
+                    
+            
+        
+            #blog .cont2  {
+                display: flex;
+                justify-content: right;
+                flex-wrap: wrap;
+                margin-left: 61%;
+                margin-top: -18%;
+            
+                }
+                #blog .cont2 p  {
+                    margin-right: -34%;
+                    }
+                    
+                #blog .cont2 h3{
+                    margin-left: 8%;
+                    }
+        
+                    #blog .cont2 h4{
+                        margin-left: 8%;
+                        }    
+                    #blog .cont2 img  {
+                    margin-bottom: -14%;
+                        }
+
+
+
+
+}
+
+
+
+@media (min-width:1920spx){
+
+    #blog .contenedor  {
+        display: flex;
+        
+        flex-wrap: wrap;
+        margin-left: -10%;
+        }
+        
+
+
+    #blog img{
+        width: 350px;;
+        height:  250px;
+        
+        }
+
+    .img{
+        width: 350px;;
+        height:  250px;
+        
+        margin-left: 43%
+    }    
+        #blog .cont1  {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-left: 20%;
+            margin-top: 0%;
+            }
+        
+            #blog .cont1 p  {
+                margin-right: 18%;
+                }
+                
+            #blog .cont1 h3  {
+                margin-right: -51%;
+                }
+        
+                #blog .cont1 h4  {
+                    margin-right: -51%;
+                    }
+            
+                    
+            
+        
+            #blog .cont2  {
+                display: flex;
+                justify-content: right;
+                flex-wrap: wrap;
+                margin-left: 61%;
+                margin-top: -18%;
+            
+                }
+                #blog .cont2 p  {
+                    margin-right: 13%;
+                    }
+                    
+                #blog .cont2 h3{
+                    margin-right: 79%;
+                    }
+        
+                    #blog .cont2 h4{
+                        margin-right: 79%;
+                        }    
+                    #blog .cont2 img  {
+                    margin-bottom: -14%;
+                        }
+
+
+
+
+}
+
+
+
+@media (min-width:1336px){
+
+    #blog .contenedor  {
+        display: flex;
+        
+        flex-wrap: wrap;
+        margin-left: -10%;
+        }
+        
+
+
+    #blog img{
+        width: 350px;;
+        height:  250px;
+        
+        }
+
+    .img{
+        width: 350px;;
+        height:  250px;
+        
+        margin-left: 20%
+    }    
+        #blog .cont1  {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-left: 20%;
+            margin-top: 0%;
+            }
+        
+            #blog .cont1 p  {
+                margin-right: 37%;
+                }
+                
+            #blog .cont1 h3  {
+                margin-right: -9%;
+                }
+        
+                #blog .cont1 h4  {
+                    margin-right: -9%;
+                    }
+            
+                    
+            
+        
+            #blog .cont2  {
+                display: flex;
+                justify-content: right;
+                flex-wrap: wrap;
+                margin-left: 61%;
+                margin-top: -18%;
+            
+                }
+                #blog .cont2 p  {
+                    margin-right: 13%;
+                    }
+                    
+                #blog .cont2 h3{
+                    margin-right: 79%;
+                    }
+        
+                    #blog .cont2 h4{
+                        margin-right: 79%;
+                        }    
+                    #blog .cont2 img  {
+                    margin-bottom: -14%;
+                        }
+
+
+
+
+}

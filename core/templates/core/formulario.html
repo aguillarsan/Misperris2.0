@@ -15,7 +15,7 @@
 
 
     {% block js %}
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     {% endblock js %}
 
     {% block contenedor %}
@@ -84,12 +84,7 @@
             });
 
         </script>        
-        <?php
-        $cone = mysqli_connect("localhost", "root", "", "misperris");
-        $reg = mysqli_query($cone, "select * from region");
-        $viv = mysqli_query($cone, "select * from tipovivienda");
-        $cid = mysqli_query($cone, "select * from ciudad");
-        ?>
+        
         
 <header>
 <div class="contenedor">

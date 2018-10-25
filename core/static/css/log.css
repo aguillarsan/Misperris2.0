@@ -1,0 +1,91 @@
+
+
+   .boby{
+    background-image: url("../img/peros.jpg");
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+ 
+     }
+
+
+#log{
+
+    width: 330px;
+    margin: auto;
+    background: rgba(138, 138, 138, 0.8);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top:200px;
+    border-radius: 7px;
+    
+    }
+    
+input,textarea{
+
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    
+    }
+   
+
+ 
+.bi{
+text-align: center;
+margin-top: 7%;
+
+
+}
+.bi h2{
+
+    background-attachment: fixed;
+font-size: 50px;
+
+}
+
+ .redessociales img{
+	
+	width:50px;
+	height:50px;
+
+
+
+
+ }
+
+ .megadiv{
+ height: 409.5px;
+
+
+ }
+ .redessociales {
+
+	background-color:rgba(96, 219, 178);
+	width:auto;
+    height:55px;
+    text-align: center;
+
+
+
+
+ }
+ 
+ @media(min-width:768px) {
+
+    #log{
+
+        width: 480px;
+        margin: auto;
+        background: rgba(138, 138, 138, 0.8);
+        padding: 30px 75px;
+        box-sizing: border-box;
+        margin-top:240px;
+        border-radius: 7px;
+        
+        }
+
+
+ }
+ 
